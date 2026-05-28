@@ -1,22 +1,23 @@
 package com.agrupa.tat_3ds.service;
 
 
-import com.agrupa.tat_3ds.dto.GrupoRelatorioDTO;
-import com.agrupa.tat_3ds.dto.RelatorioTrabalhoDTO;
-import com.agrupa.tat_3ds.models.Grupo;
-import com.agrupa.tat_3ds.repository.GrupoRepository;
-import com.agrupa.tat_3ds.repository.GrupoUsuarioRepository;
-import com.agrupa.tat_3ds.repository.TrabalhoEmGrupoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.agrupa.tat_3ds.dto.GrupoRelatorioDTO;
+import com.agrupa.tat_3ds.dto.RelatorioTrabalhoDTO;
+import com.agrupa.tat_3ds.models.Grupo;
+import com.agrupa.tat_3ds.repository.GrupoRepository;
+import com.agrupa.tat_3ds.repository.GrupoUsuarioRepository;   
+import com.agrupa.tat_3ds.repository.TrabalhoRepository;
+
 @Service
 public class RelatorioService {
-    @Autowired private TrabalhoEmGrupoRepository trabalhoRepo;
+    @Autowired private TrabalhoRepository trabalhoRepo;
     @Autowired private GrupoRepository grupoRepo;
     @Autowired private GrupoUsuarioRepository grupoUsuarioRepo;
 
