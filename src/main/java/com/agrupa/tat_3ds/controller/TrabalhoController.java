@@ -1,10 +1,15 @@
 package com.agrupa.tat_3ds.controller;
 
-import com.agrupa.tat_3ds.form.RegistroForm;
-import com.agrupa.tat_3ds.service.TrabalhoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.agrupa.tat_3ds.form.RegistroForm;
+import com.agrupa.tat_3ds.service.TrabalhoService;
 
 @RestController
 @RequestMapping("/trabalho")
@@ -24,7 +29,7 @@ public class TrabalhoController {
 
     @PostMapping(path = "/editar-grupo/{idGrupo}/{nomeGrupo}")
     public ResponseEntity<Void> editarGrupo(@PathVariable Integer idGrupo, @RequestBody String nomeGrupo){
-//        this.trabalhoService.editarGrupo(idGrupo, nomeGrupo);
+       this.trabalhoService.editarGrupo(idGrupo, nomeGrupo);
         return ResponseEntity.accepted().build();
     }
 }
